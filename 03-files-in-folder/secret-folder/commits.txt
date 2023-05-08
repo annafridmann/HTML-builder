@@ -1,0 +1,47 @@
+git commit -m 'fix (basic 1.1): from html-and-css is implemented throughout the project: no tabs are used, all indents are whitespace. 
+refactoring (extended-1.1):The '1.1 Semantics' rule of html-and-css-extended is respected: all html tags match their purpose.'
+
+Правило '1.2 Нижний регистр написания' из html-and-css выполняется во всем проекте: все HTML теги, атрибуты из значения, 
+селекторы и их значения записаны в нижнем регистре
+
+Правило '1.3 Кавычки в HTML/CSS документе' из html-and-css выполняется во всем проекте: в HTML и СSS файлах используются только двойные кавычки
+----------------------------------------------------
+var button = document.createElement('button');
+  button.innerHTML = 'click me';
+
+  button.onclick = function(){ 
+    document.getElementById("keyboard").remove();
+    let divkeyboard = document.createElement('div');
+    divkeyboard.className = "keyboard keyboard-rus";
+    divkeyboard.id = "keyboard1";
+    document.body.append(divkeyboard); 
+
+    let div1 = document.createElement('div');
+      div1.className = "keyboard-row"
+      keyboard.appendChild(div1);
+
+    createBtns(keysRus1,div1);
+
+    let div2 = document.createElement('div');
+      div2.className = "keyboard-row"
+      keyboard.appendChild(div2);
+    createBtns(keysRus2,div2);
+
+    let div3 = document.createElement('div');
+      div3.className = "keyboard-row"
+      keyboard.appendChild(div3);
+    createBtns(keysRus3,div3);
+
+    let div4 = document.createElement('div');
+      div4.className = "keyboard-row"
+      keyboard.appendChild(div4);
+    createBtns(keysRus4,div4);
+
+    let div5 = document.createElement('div');
+      div5.className = "keyboard-row"
+      keyboard.appendChild(div5);    
+
+    createBtns(keysRus5,div5);
+  };
+
+  document.body.appendChild(button);
