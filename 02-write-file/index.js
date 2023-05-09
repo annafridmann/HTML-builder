@@ -1,8 +1,10 @@
 const fs = require('fs');
+const path = require('path');
+
 const { stdin, stdout } = process;
-let writableStream = fs.createWriteStream(
-    'destination.txt' 
-);
+const newFileName = 'destination.txt';
+const newFileWay = path.join(__dirname, newFileName);
+let writableStream = fs.createWriteStream(newFileWay);
 
 stdout.write('Напиши что то:\n');
 stdin.on('data', data => {
@@ -10,7 +12,7 @@ stdin.on('data', data => {
 
     if (data.toString() === 'exit\r\n'){
         process.on('exit', () => 
-        console.log('удачи'));
-        process.exit();
+            console.log('удачи'));
+            process.exit();
     }
 });
