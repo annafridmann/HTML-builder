@@ -9,6 +9,16 @@ const dirTo = path.join(__dirname, 'files-copy');
 fsPromises
   .mkdir(dirTo, { recursive: true });
 
+fs.readdir(dirTo, (err, files) => {
+  if (err) process.stdout.write(err);
+
+  files.forEach(file => {
+    fs.rm(path.join(dirTo, file), (error) => {
+      if (error) process.stdout.write(error);
+    });
+  });
+});
+
 fsPromises
   .readdir(dirFrom, { withFileTypes: true })
   .then((files) => {
