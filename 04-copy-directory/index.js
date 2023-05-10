@@ -13,7 +13,7 @@ fs.readdir(dirTo, (err, files) => {
   if (err) process.stdout.write(err);
 
   files.forEach(file => {
-    fs.rm(path.join(dirTo, file), (error) => {
+    fs.unlink(path.join(dirTo, file), (error) => {
       if (error) process.stdout.write(error);
     });
   });
